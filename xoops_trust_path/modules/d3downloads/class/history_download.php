@@ -34,8 +34,8 @@ if( ! class_exists( 'history_download' ) )
 		function history_download( $mydirname, $id= 0 )
 		{
 			include_once dirname( dirname(__FILE__) ).'/include/mytable.php' ;
-			$this->db =& Database::getInstance();
-			$this->myts =& d3downloadsTextSanitizer::sGetInstance() ;
+			$this->db = Database::getInstance();
+			$this->myts = d3downloadsTextSanitizer::sGetInstance() ;
 			$this->mod_url = XOOPS_URL.'/modules/'.$mydirname ;
 			$this->table = $this->db->prefix( "{$mydirname}_downloads_history" ) ;
 			$this->cat_table = $this->db->prefix( "{$mydirname}_cat" ) ;

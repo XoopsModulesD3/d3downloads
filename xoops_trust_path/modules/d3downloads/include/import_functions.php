@@ -13,8 +13,8 @@ if ( ! function_exists('d3download_import_from_mydownloads') ) {
 	function d3download_import_from_mydownloads( $mydirname , $import_mid )
 	{
 		require_once dirname( dirname(__FILE__) ).'/class/d3downloads.textsanitizer.php' ;
-		$myts =& d3downloadsTextSanitizer::sGetInstance() ;
-		$db =& Database::getInstance() ;
+		$myts = d3downloadsTextSanitizer::sGetInstance() ;
+		$db = Database::getInstance() ;
 		$import_mid = intval( $import_mid ) ;
 
 		// get name of `contents` table 
@@ -82,7 +82,7 @@ if ( ! function_exists('d3download_import_from_mydownloads') ) {
 if ( ! function_exists('d3download_import_from_wfdownloads') ) {
 	function d3download_import_from_wfdownloads( $mydirname , $import_mid )
 	{
-		$db =& Database::getInstance() ;
+		$db = Database::getInstance() ;
 		$import_mid = intval( $import_mid ) ;
 
 		// get name of `contents` table 
@@ -144,7 +144,7 @@ if ( ! function_exists('d3download_import_from_wfdownloads') ) {
 if ( ! function_exists('d3download_import_from_d3download') ) {
 	function d3download_import_from_d3download( $mydirname , $import_mid, $uploads_dir_error )
 	{
-		$db =& Database::getInstance() ;
+		$db = Database::getInstance() ;
 
 		include_once dirname( dirname(__FILE__) ).'/include/mytable.php' ;
 
@@ -231,8 +231,8 @@ if ( ! function_exists('d3download_copy_converturl_for_import') ) {
 	function d3download_copy_converturl_for_import( $mydirname, $from_dirname )
 	{
 		require_once dirname( dirname(__FILE__) ).'/class/d3downloads.textsanitizer.php' ;
-		$myts =& d3downloadsTextSanitizer::sGetInstance() ;
-		$db =& Database::getInstance() ;
+		$myts = d3downloadsTextSanitizer::sGetInstance() ;
+		$db = Database::getInstance() ;
 
 		$result = $db->query("SELECT lid, url, file2 FROM ".$db->prefix( $mydirname."_downloads" )."");
 		while( list( $id, $url, $file2 ) = $db->fetchRow( $result ) ) {
@@ -285,8 +285,8 @@ if (! function_exists('d3download_convert_from_wfdownloads')) {
 	function d3download_convert_from_wfdownloads( $mydirname, $target_dirname )
 	{
 		require_once dirname( dirname(__FILE__) ).'/class/d3downloads.textsanitizer.php' ;
-		$myts =& d3downloadsTextSanitizer::sGetInstance() ;
-		$db =& Database::getInstance() ;
+		$myts = d3downloadsTextSanitizer::sGetInstance() ;
+		$db = Database::getInstance() ;
 
 		$module_handler =& xoops_gethandler('module');
 		$config_handler =& xoops_gethandler('config');

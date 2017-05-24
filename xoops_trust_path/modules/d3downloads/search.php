@@ -16,8 +16,8 @@ if( ! function_exists( 'd3downloads_global_search_base' ) ) {
 		include_once dirname( __FILE__ ).'/class/mydownload.php' ;
 		include_once dirname( __FILE__ ).'/class/user_access.php' ;
 
-		$myts =& d3downloadsTextSanitizer::sGetInstance() ;
-		$db =& Database::getInstance() ;
+		$myts = d3downloadsTextSanitizer::sGetInstance() ;
+		$db = Database::getInstance() ;
 
 		$showcontext = isset( $_GET['showcontext'] ) ? $_GET['showcontext'] : 0 ;
 		$mydownload = new MyDownload( $mydirname ) ;

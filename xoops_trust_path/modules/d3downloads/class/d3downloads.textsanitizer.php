@@ -19,7 +19,7 @@ if( ! class_exists( 'd3downloadsTextSanitizer' ) )
 
 		function &getInstance()
 		{
-			$instance =& self::sGetInstance();
+			$instance = self::sGetInstance();
 			return $instance;
 		}
 

@@ -216,7 +216,7 @@ if ( ! function_exists('d3download_convert_for_newid') ) {
 	function d3download_convert_for_newid( $mydirname, $newid, $url, $file2, $uid )
 	{
 		include_once dirname( dirname(__FILE__) ).'/include/common_functions.php' ;
-		$db =& Database::getInstance() ;
+		$db = Database::getInstance() ;
 
 		$uploads_dir = XOOPS_TRUST_PATH.'/uploads/'.$mydirname ;
 		$site_salt = substr( md5( XOOPS_URL ) , -4 ) ;
@@ -262,7 +262,7 @@ if ( ! function_exists('d3download_convert_for_unapproval') ) {
 	function d3download_convert_for_unapproval( $mydirname, $newid, $url, $file2, $uid )
 	{
 		include_once dirname( dirname(__FILE__) ).'/include/common_functions.php' ;
-		$db =& Database::getInstance() ;
+		$db = Database::getInstance() ;
 
 		$uploads_dir = XOOPS_TRUST_PATH.'/uploads/'.$mydirname ;
 		$site_salt = substr( md5( XOOPS_URL ) , -4 ) ;

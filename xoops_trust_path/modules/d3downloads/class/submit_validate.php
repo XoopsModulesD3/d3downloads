@@ -67,8 +67,8 @@ if( ! class_exists( 'Submit_Validate' ) )
 			if( ! empty( $mydirname ) ) {
 				global $xoopsUser ;
 
-				$this->db =& Database::getInstance();
-				$this->myts =& d3downloadsTextSanitizer::sGetInstance() ;
+				$this->db = Database::getInstance();
+				$this->myts = d3downloadsTextSanitizer::sGetInstance() ;
 				$this->table = $this->db->prefix( "{$mydirname}_downloads" ) ;
 				$this->post_check = new Post_Check() ;
 				$this->user_access = new user_access( $mydirname ) ;

@@ -7,7 +7,7 @@ if ( ! function_exists('d3download_submit_execution') ) {
 		require_once dirname( dirname(__FILE__) ).'/include/common_functions.php' ;
 		include_once dirname( dirname(__FILE__) ).'/include/upload_functions.php' ;
 
-		$db =& Database::getInstance() ;
+		$db = Database::getInstance() ;
 		global $xoopsUser , $xoopsModuleConfig ;
 
 		// Initialization
@@ -252,7 +252,7 @@ if ( ! function_exists('d3download_submit_insertdb') ) {
 		require_once dirname( dirname(__FILE__) ).'/include/common_functions.php' ;
 		include_once dirname( dirname(__FILE__) ).'/include/upload_functions.php' ;
 
-		$db =& Database::getInstance() ;
+		$db = Database::getInstance() ;
 		global $xoopsUser , $xoopsModuleConfig ;
 
 		// Initialization
@@ -331,7 +331,7 @@ if ( ! function_exists('d3download_modfile_insertdb') ) {
 		require_once dirname( dirname(__FILE__) ).'/class/db_download.php' ;
 		require_once dirname( dirname(__FILE__) ).'/include/common_functions.php' ;
 
-		$db =& Database::getInstance() ;
+		$db = Database::getInstance() ;
 
 		// Initialization
 		$error = 0 ;
@@ -399,7 +399,7 @@ if ( ! function_exists('d3download_approval_insertdb') ) {
 		require_once dirname( dirname(__FILE__) ).'/include/common_functions.php' ;
 		include_once dirname( dirname(__FILE__) ).'/include/upload_functions.php' ;
 
-		$db =& Database::getInstance() ;
+		$db = Database::getInstance() ;
 		global $xoopsUser , $xoopsModuleConfig ;
 
 		// Initialization
@@ -481,8 +481,8 @@ if ( ! function_exists('d3download_file_manager_data_update') ) {
 	{
 		require_once dirname( dirname(__FILE__) ).'/class/d3downloads.textsanitizer.php' ;
 
-		$myts =& d3downloadsTextSanitizer::sGetInstance() ;
-		$db =& Database::getInstance() ;
+		$myts = d3downloadsTextSanitizer::sGetInstance() ;
+		$db = Database::getInstance() ;
 
 		$_POST = $myts->Delete_Nullbyte( $_POST );
 		$errors = array() ;
@@ -513,7 +513,7 @@ if ( ! function_exists('d3download_file_manager_data_update') ) {
 if ( ! function_exists('d3download_file_manager_move_action') ) {
 	function d3download_file_manager_move_action( $mydirname, $cid )
 	{
-		$db =& Database::getInstance() ;
+		$db = Database::getInstance() ;
 
 		$errors = array() ;
 		foreach( $_POST['action_selects'] as $id => $value ) {
@@ -533,8 +533,8 @@ if ( ! function_exists('d3download_categorymanager_data_update') ) {
 	function d3download_categorymanager_data_update( $mydirname )
 	{
 		require_once dirname( dirname(__FILE__) ).'/class/d3downloads.textsanitizer.php' ;
-		$myts =& d3downloadsTextSanitizer::sGetInstance() ;
-		$db =& Database::getInstance() ;
+		$myts = d3downloadsTextSanitizer::sGetInstance() ;
+		$db = Database::getInstance() ;
 
 		// DELETE NULLBYTE
 		$_POST = $myts->Delete_Nullbyte( $_POST );

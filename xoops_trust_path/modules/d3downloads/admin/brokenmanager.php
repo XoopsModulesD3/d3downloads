@@ -82,7 +82,7 @@ if( ! empty( $_POST['invisible'] ) ) {
 		$error_message = implode( '<br />' , $message ) ;
 	}
 	if( empty( $iserror ) ) {
-		$db =& Database::getInstance() ;
+		$db = Database::getInstance() ;
 		foreach( $_POST['action_selects'] as $id => $value ) {
 			if( empty( $value ) ) continue ;
 			$lid = intval( $id ) ;

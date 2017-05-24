@@ -2,7 +2,7 @@
 
 require_once dirname( dirname(__FILE__) ).'/include/upload_functions.php' ;
 
-$db =& Database::getInstance() ;
+$db = Database::getInstance() ;
 global $xoopsConfig ;
 
 // this page can be called only from d3downloads

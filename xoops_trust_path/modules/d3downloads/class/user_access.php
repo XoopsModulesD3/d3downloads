@@ -18,8 +18,8 @@ if( ! class_exists( 'user_access' ) )
 			global $xoopsUser ;
 			include_once dirname( dirname(__FILE__) ).'/include/mytable.php' ;
 
-			$this->db =& Database::getInstance() ;
-			$this->myts =& d3downloadsTextSanitizer::sGetInstance() ;
+			$this->db = Database::getInstance() ;
+			$this->myts = d3downloadsTextSanitizer::sGetInstance() ;
 			$this->mydirname = $mydirname ;
 			$this->table = $this->db->prefix( "{$mydirname}_user_access" ) ;
 			$this->cat_table = $this->db->prefix( "{$mydirname}_cat" ) ;
@@ -278,7 +278,7 @@ if( ! class_exists( 'user_access' ) )
 			else return '' ;
 
 			$group_handler =& xoops_gethandler( 'group' ) ;
-			$groups =& $group_handler->getObjects() ;
+			$groups = $group_handler->getObjects() ;
 			$group_trs= '' ;
 
 			foreach( $groups as $group ) {
@@ -411,7 +411,7 @@ if( ! class_exists( 'user_access' ) )
 		{
 			$maincid = $this->get_my_maincid( $cid ) ;
 			$group_handler = & xoops_gethandler( 'group' ) ;
-			$groups =& $group_handler->getObjects() ;
+			$groups = $group_handler->getObjects() ;
 			$canread_info = '| ' ;
 
 			foreach( $groups as $group ) {
@@ -435,7 +435,7 @@ if( ! class_exists( 'user_access' ) )
 		function make_group_form( $cid, $group_sel=0 )
 		{
 			$group_handler =& xoops_gethandler( 'group' ) ;
-			$groups =& $group_handler->getObjects() ;
+			$groups = $group_handler->getObjects() ;
 			$group_trs = '' ;
 
 			foreach( $groups as $group ) {
@@ -748,7 +748,7 @@ if( ! class_exists( 'user_access' ) )
 			$error = 0 ;
 			$this->db->query( "DELETE FROM ".$this->table." WHERE cid='".$cid."' AND groupid > 0" ) ;
 			$group_handler =& xoops_gethandler( 'group' ) ;
-			$groups =& $group_handler->getObjects() ;
+			$groups = $group_handler->getObjects() ;
 
 			foreach( $groups as $group ) {
 				$groupid = $group->getVar('groupid') ;

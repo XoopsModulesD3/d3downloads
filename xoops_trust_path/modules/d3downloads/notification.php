@@ -13,7 +13,7 @@ if( ! function_exists( 'd3downloads_notify_base' ) ) {
 		include_once dirname( __FILE__ ).'/class/user_access.php' ;
 		include_once dirname( __FILE__ ).'/class/mydownload.php' ;
 
-		$db =& Database::getInstance() ;
+		$db = Database::getInstance() ;
 
 		$module_handler =& xoops_gethandler( 'module' ) ;
 		$module =& $module_handler->getByDirname( $mydirname ) ;

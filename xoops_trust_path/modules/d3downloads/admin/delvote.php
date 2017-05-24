@@ -4,7 +4,7 @@ require_once dirname( dirname(__FILE__) ).'/class/gtickets.php' ;
 require_once dirname( dirname(__FILE__) ).'/class/rate_download.php' ;
 require_once dirname( dirname(__FILE__) ).'/include/common_functions.php' ;
 
-$db =& Database::getInstance() ;
+$db = Database::getInstance() ;
 
 // THIS PAGE CAN BE CALLED ONLY FROM D3DOWNLOADS
 if( $xoopsModule->getVar('dirname') != $mydirname ) die( 'this page can be called only from '.$mydirname ) ;

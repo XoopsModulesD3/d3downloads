@@ -48,8 +48,8 @@ if( ! class_exists( 'unapproval_download' ) )
 		{
 			include_once dirname( dirname(__FILE__) ).'/include/mytable.php' ;
 
-			$this->db =& Database::getInstance();
-			$this->myts =& d3downloadsTextSanitizer::sGetInstance() ;
+			$this->db = Database::getInstance();
+			$this->myts = d3downloadsTextSanitizer::sGetInstance() ;
 			$this->table = $this->db->prefix( "{$mydirname}_unapproval" ) ;
 			$this->cat_table = $this->db->prefix( "{$mydirname}_cat" ) ;
 			$this->mydirname = $mydirname ;

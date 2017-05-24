@@ -12,7 +12,7 @@ if( ! class_exists( 'db_download' ) )
 
 		function db_download( $table_name, $id_name )
 		{
-			$this->db =& Database::getInstance();
+			$this->db = Database::getInstance();
 			$this->table = $table_name;
 			$this->id = $id_name;
 		}

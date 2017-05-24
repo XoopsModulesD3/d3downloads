@@ -31,7 +31,7 @@ if( empty( $uploads_dir_error ) ){
 
 // get importable modules list
 $module_handler =& xoops_gethandler( 'module' ) ;
-$modules =& $module_handler->getObjects() ;
+$modules = $module_handler->getObjects() ;
 $importable_modules = array() ;
 foreach( $modules as $module ) {
 	$mid = $module->getVar('mid') ;

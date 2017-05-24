@@ -11,8 +11,8 @@ if( ! class_exists( 'd3downloadsComment' ) )
 		{
 			require_once dirname( dirname(__FILE__) ).'/class/d3downloads.textsanitizer.php' ;
 
-			$db =& Database::getInstance() ;
-			$myts =& d3downloadsTextSanitizer::sGetInstance() ;
+			$db = Database::getInstance() ;
+			$myts = d3downloadsTextSanitizer::sGetInstance() ;
 
 			$module_handler =& xoops_gethandler( 'module' ) ;
 			$module =& $module_handler->getByDirname( $this->mydirname ) ;
@@ -45,7 +45,7 @@ if( ! class_exists( 'd3downloadsComment' ) )
 			include_once dirname( dirname(__FILE__) ).'/class/user_access.php' ;
 			include_once dirname( dirname(__FILE__) ).'/class/mydownload.php' ;
 
-			$db =& Database::getInstance() ;
+			$db = Database::getInstance() ;
 			$mydirname = $this->mydirname ;
 
 			$user_access = new user_access( $mydirname ) ;
@@ -65,7 +65,7 @@ if( ! class_exists( 'd3downloadsComment' ) )
 		{
 			include_once dirname( dirname(__FILE__) ).'/class/mycategory.php' ;
 
-			$db =& Database::getInstance() ;
+			$db = Database::getInstance() ;
 			$mydirname = $this->mydirname ;
 			$mycategory = new MyCategory( $mydirname, 'Show' ) ;
 

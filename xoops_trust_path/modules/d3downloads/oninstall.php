@@ -21,7 +21,7 @@ function d3downloads_oninstall_base( $module , $mydirname )
 		if( ! is_array( $ret ) ) $ret = array() ;
 	}
 
-	$db =& Database::getInstance() ;
+	$db = Database::getInstance() ;
 	$mid = $module->getVar('mid') ;
 
 	// TABLES (loading mysql.sql)
@@ -114,7 +114,7 @@ function d3downloads_message_append_oninstall( &$module_obj , &$log )
 		foreach( $GLOBALS['ret'] as $message ) {
 			$log->add( strip_tags( $message ) ) ;
 		}
-		//$db =& Database::getInstance() ;
+		//$db = Database::getInstance() ;
 		//echo $db->logger->dumpQueries() ;
 	}
 

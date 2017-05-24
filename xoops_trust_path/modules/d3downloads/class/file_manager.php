@@ -26,8 +26,8 @@ if( ! class_exists( 'file_manager' ) )
 		function file_manager( $mydirname )
 		{
 			include_once dirname( dirname(__FILE__) ).'/include/mytable.php' ;
-			$this->db =& Database::getInstance();
-			$this->myts =& d3downloadsTextSanitizer::sGetInstance() ;
+			$this->db = Database::getInstance();
+			$this->myts = d3downloadsTextSanitizer::sGetInstance() ;
 			$this->table = $this->db->prefix( "{$mydirname}_downloads" ) ;
 			$this->cat_table = $this->db->prefix( "{$mydirname}_cat" ) ;
 			$this->broken_table = $this->db->prefix( "{$mydirname}_broken" ) ;
@@ -96,7 +96,7 @@ if( ! class_exists( 'file_manager' ) )
 		function get_copy_target_modules()
 		{
 			$module_handler =& xoops_gethandler( 'module' ) ;
-			$modules =& $module_handler->getObjects() ;
+			$modules = $module_handler->getObjects() ;
 			$target_modules = array() ;
 			$target_modules = array( 0 => '----' ) ;
 			$i = 0 ;

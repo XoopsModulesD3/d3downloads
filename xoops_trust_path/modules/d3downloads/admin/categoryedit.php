@@ -7,7 +7,7 @@ include_once dirname( dirname(__FILE__) ).'/class/mydownload.php' ;
 require_once dirname( dirname(__FILE__) ).'/include/common_functions.php' ;
 require_once dirname( dirname(__FILE__) ).'/include/transact_functions.php' ;
 
-$db =& Database::getInstance() ;
+$db = Database::getInstance() ;
 
 // THIS PAGE CAN BE CALLED ONLY FROM D3DOWNLOADS
 if( $xoopsModule->getVar('dirname') != $mydirname ) die( 'this page can be called only from '.$mydirname ) ;
@@ -28,7 +28,7 @@ $error_message = '' ;
 $cid = isset( $_GET['cid'] ) ? intval( $_GET['cid'] ) : 0 ;
 $mycategory = new MyCategory( $mydirname, 'Show', $cid ) ;
 
-// ‘¶Ý‚µ‚È‚¢ CID ‚Ìê‡ƒŠƒ_ƒCƒŒƒNƒg
+// ï¿½ï¿½ï¿½Ý‚ï¿½ï¿½È‚ï¿½ CID ï¿½Ìê‡ï¿½ï¿½ï¿½_ï¿½Cï¿½ï¿½ï¿½Nï¿½g
 if( $cid != 0 && ! $mycategory->return_cid() ) {
 	redirect_header( XOOPS_URL."/modules/$mydirname/admin/index.php?page=categorymanager" , 2 , _MD_D3DOWNLOADS_NOREADPERM ) ;
 	exit();

@@ -8,7 +8,7 @@ if ( ! function_exists('d3downloads_xpwiki') ) {
 		if ( ! class_exists( 'd3downloadsTextSanitizer' ) ) {
 			require_once dirname( dirname( dirname(__FILE__) ) ).'/class/d3downloads.textsanitizer.php' ;
 		}
-		$myts =& d3downloadsTextSanitizer::sGetInstance() ;
+		$myts = d3downloadsTextSanitizer::sGetInstance() ;
 		if ( ! class_exists( 'XpWiki' ) ) {
 			@ include_once XOOPS_TRUST_PATH.'/modules/xpwiki/include.php' ;
 		}

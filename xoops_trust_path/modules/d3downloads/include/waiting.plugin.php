@@ -2,7 +2,7 @@
 
 function b_waiting_d3downloads( $mydirname )
 {
-	$db =& Database::getInstance();
+	$db = Database::getInstance();
 	$ret = array() ;
 
 	// d3downloads links

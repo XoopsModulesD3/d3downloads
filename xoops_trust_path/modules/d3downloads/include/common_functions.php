@@ -241,7 +241,7 @@ if ( ! function_exists('d3download_can_albumselect') ) {
 if ( ! function_exists('d3download_delcat') ) {
 	function d3download_delcat( $mydirname, $cid )
 	{
-		$db =& Database::getInstance() ;
+		$db = Database::getInstance() ;
 		include_once dirname( dirname(__FILE__) ).'/class/mycategory.php' ;
 
 		$mycategory = new MyCategory( $mydirname, 'Show' ) ;
@@ -265,7 +265,7 @@ if ( ! function_exists('d3download_delcat') ) {
 if ( ! function_exists('d3download_delete_contents') ) {
 	function d3download_delete_contents( $mydirname, $whr, $cid )
 	{
-		$db =& Database::getInstance() ;
+		$db = Database::getInstance() ;
 		$res = $db->query("SELECT lid, filename, file2 FROM ".$db->prefix( $mydirname."_downloads")." WHERE $whr" ) ;
 		while( list( $id, $fname, $fil2 ) = $db->fetchRow( $res ) ) 
 		{
@@ -292,7 +292,7 @@ if ( ! function_exists('d3download_delete_contents') ) {
 if ( ! function_exists('d3download_delete_lid') ) {
 	function d3download_delete_lid( $mydirname, $lid )
 	{
-		$db =& Database::getInstance() ;
+		$db = Database::getInstance() ;
 		$module_handler =& xoops_gethandler('module');
 		$config_handler =& xoops_gethandler('config');
 		$module =& $module_handler->getByDirname( $mydirname );
@@ -505,7 +505,7 @@ if ( ! function_exists('d3download_main_trigger_event') ) {
 		require_once XOOPS_TRUST_PATH.'/libs/altsys/class/D3NotificationHandler.class.php' ;
 		$mytrustdirpath = dirname( dirname( __FILE__ ) );
 		$mytrustdirname = basename( $mytrustdirpath );
-		$not_handler =& D3NotificationHandler::getInstance() ;
+		$not_handler = D3NotificationHandler::getInstance() ;
 		$not_handler->triggerEvent( $mydirname , $mytrustdirname , $category , $item_id , $event , $extra_tags , $user_list , $omit_user_id ) ;
 	}
 }
@@ -556,7 +556,7 @@ if ( ! function_exists('d3download_get_submenu_option') ) {
 	function d3download_get_submenu_option( $mydirname )
 	{
 		require_once dirname( dirname(__FILE__) ).'/class/d3downloads.textsanitizer.php' ;
-		$myts =& d3downloadsTextSanitizer::sGetInstance() ;
+		$myts = d3downloadsTextSanitizer::sGetInstance() ;
 
 		$mytrustdirpath = dirname( dirname( __FILE__ ) ) ;
 		$mytrustdirname = basename( $mytrustdirpath ) ;
@@ -589,8 +589,8 @@ if ( ! function_exists('d3download_get_categories_for_submenu') ) {
 	function d3download_get_categories_for_submenu( $mydirname, $whr )
 	{
 		require_once dirname( dirname(__FILE__) ).'/class/d3downloads.textsanitizer.php' ;
-		$myts =& d3downloadsTextSanitizer::sGetInstance() ;
-		$db =& Database::getInstance() ;
+		$myts = d3downloadsTextSanitizer::sGetInstance() ;
+		$db = Database::getInstance() ;
 
 		$categories = array( 0 => array( 'name' => '' , 'url' => '' , 'sub' => array() ) ) ;
 
@@ -705,7 +705,7 @@ if ( ! function_exists('d3download_delete_nullbyte') ) {
 	function d3download_delete_nullbyte( $arr )
 	{
 		require_once dirname( dirname(__FILE__) ).'/class/d3downloads.textsanitizer.php' ;
-		$myts =& d3downloadsTextSanitizer::sGetInstance() ;
+		$myts = d3downloadsTextSanitizer::sGetInstance() ;
 		return $myts->Delete_Nullbyte( $arr ) ;
 	}
 }
@@ -724,7 +724,7 @@ if ( ! function_exists('d3download_set_default_user_access') ) {
 	{
 		require_once dirname( dirname(__FILE__) ).'/class/user_access.php' ;
 
-		$db =& Database::getInstance() ;
+		$db = Database::getInstance() ;
 		$user_access = new user_access( $mydirname ) ;
 		$crs = $db->query( "SELECT cid FROM ".$db->prefix( $mydirname."_cat" )." WHERE pid = 0" ) ;
 		while( list( $id ) = $db->fetchRow( $crs ) ) {
@@ -739,7 +739,7 @@ if ( ! function_exists('d3download_update100') ) {
 	function d3download_update100( $mydirname )
 	{
 		if ( ! ini_get( 'safe_mode' ) ) { @set_time_limit(0); }
-		$db =& Database::getInstance() ;
+		$db = Database::getInstance() ;
 
 		// upload url 
 		$searches = XOOPS_TRUST_PATH.'/uploads/'.$mydirname ;
@@ -772,7 +772,7 @@ if ( ! function_exists('d3download_historycheck') ) {
 	function d3download_historycheck( $mydirname )
 	{
 		if ( ! ini_get( 'safe_mode' ) ) { @set_time_limit(0); }
-		$db =& Database::getInstance() ;
+		$db = Database::getInstance() ;
 		$result = $db->query("SELECT id, url, file2 FROM ".$db->prefix( $mydirname."_downloads_history" )."");
 		while( list( $id, $url, $file2 ) = $db->fetchRow( $result ) ) {
 			$error = 0 ;
@@ -786,7 +786,7 @@ if ( ! function_exists('d3download_historycheck') ) {
 if ( ! function_exists('d3download_history_filenamecheck') ) {
 	function d3download_history_filenamecheck( $mydirname, $id  )
 	{
-		$db =& Database::getInstance() ;
+		$db = Database::getInstance() ;
 		$error = 0 ;
 		$result = $db->query( "SELECT url, filename, file2, filename2 FROM ".$db->prefix( $mydirname."_downloads_history" )." WHERE id='".$id."'" );
 		while( list( $url, $filename, $file2, $filename2 ) = $db->fetchRow( $result ) ) {
@@ -800,7 +800,7 @@ if ( ! function_exists('d3download_history_filenamecheck') ) {
 if ( ! function_exists('d3download_history_delete') ) {
 	function d3download_history_delete( $mydirname, $id, $url, $file2 )
 	{
-		$db =& Database::getInstance() ;
+		$db = Database::getInstance() ;
 		$searches = 'XOOPS_TRUST_PATH/uploads/'.$mydirname ;
 		$replacements = XOOPS_TRUST_PATH.'/uploads/'.$mydirname ;
 		$count = $count2 = 0 ;

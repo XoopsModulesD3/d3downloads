@@ -4,8 +4,8 @@ if (! function_exists('b_d3downloads_pickup_show') ) {
 	function b_d3downloads_pickup_show( $options )
 	{
 		global $xoopsConfig ;
-		$db =& Database::getInstance() ;
-		(method_exists('MyTextSanitizer', 'sGetInstance') and $myts =& MyTextSanitizer::sGetInstance()) || $myts =& MyTextSanitizer::getInstance() ;
+		$db = Database::getInstance() ;
+		(method_exists('MyTextSanitizer', 'sGetInstance') and $myts = MyTextSanitizer::sGetInstance()) || $myts = MyTextSanitizer::getInstance() ;
 
 		include_once dirname( dirname(__FILE__) ).'/class/user_access.php' ;
 		include_once dirname( dirname(__FILE__) ).'/class/block_download.php' ;
